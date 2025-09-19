@@ -1,0 +1,10 @@
+District,Lead (mg/l),Cadmium (mg/l),Chromium (mg/l),Arsenic (mg/l),Mercury (mg/l),Nickel (mg/l),Copper (mg/l),Zinc (mg/l),Iron (mg/l),Manganese (mg/l)
+Bengaluru Urban,<0.01,<0.003,<0.05,<0.01,ND,ND,ND,ND,Elevated,Elevated
+Bengaluru Rural,<0.01,<0.003,<0.05,<0.01,ND,ND,ND,ND,Elevated,Elevated
+Belgaum,ND,ND,Detected,Elevated,ND,Detected,Detected,Detected,Variable,Variable
+Dharwad,ND,ND,Detected,Elevated,ND,Detected,Detected,Detected,Variable,Variable
+Uttar Kannada,ND,ND,Detected,Elevated,ND,Detected,Detected,Detected,Variable,Variable
+Raichur,<0.01,<0.003,<0.05,Above limit,ND,ND,ND,ND,Elevated,Elevated
+Yadgir,<0.01,<0.003,<0.05,Above limit,ND,ND,ND,ND,Elevated,Elevated
+Peenya Area (Bengaluru),Detected,Detected,Detected,Detected,Detected,Detected,Detected,Detected,Variable,Variable
+Other Districts,Below Limits,Below Limits,Below Limits,Below Limits,ND,ND,ND,ND,Variable,Variable
