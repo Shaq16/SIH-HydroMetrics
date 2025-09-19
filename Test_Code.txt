@@ -1,0 +1,17 @@
+Test for HMPI for no name lake
+curl http://localhost:3000/api/hmpi/InvalidLake
+
+Test for HMPI for Lake in list
+curl http://localhost:3000/api/hmpi/Agara
+
+Test for HMPI for Ground Water in a perticulat District 
+curl http://localhost:3000/api/district/InvalidDistrict
+curl http://localhost:3000/api/district/Bengaluru%20Rural
+
+Test for Heavy Metal concentration present in Lake
+curl http://localhost:3000/api/lake-data/InvalidLake
+curl http://localhost:3000/api/lake-data/Agara
+
+Test for Heavy Metal concentration present in Ground Water in a particular district 
+curl http://localhost:3000/api/district-data/InvalidDistrict
+curl http://localhost:3000/api/district-data/Bengaluru%20Rural
