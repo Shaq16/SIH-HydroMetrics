@@ -149,7 +149,9 @@ All colors MUST be HSL.
   body {
     background: hsl(var(--background));
     color: hsl(var(--foreground));
-    @apply font-sans antialiased;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Leaflet map dark theme override */
@@ -167,6 +169,30 @@ All colors MUST be HSL.
   .leaflet-popup-tip {
     background: hsl(var(--card));
   }
+}
+
+@layer utilities {
+  .animate-spin-slow { animation: spin 8s linear infinite; }
+  .animate-spin-reverse { animation: spin 6s linear infinite reverse; }
+  .animate-fade-in { animation: fadeIn 1s ease-out 1s both; }
+  .animate-fade-in-delayed { animation: fadeIn 1s ease-out 2s both; }
+  .animate-fade-in-delayed-2 { animation: fadeIn 1s ease-out 2.5s both; }
+  .animate-dashboard-fade-in { animation: dashboardFadeIn 1s ease-out both; }
+  .animate-fade-out { animation: fadeOut 600ms ease-in both; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes dashboardFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+    @keyframes pulse { 0% { opacity: .2; transform: scale(.8); } 50% { opacity: 1; transform: scale(1); } 100% { opacity: .2; transform: scale(.8); } }
+    @keyframes ping { 0% { transform: scale(0.6); opacity: 0.35; } 70% { transform: scale(1); opacity: 0.06; } 100% { transform: scale(1.4); opacity: 0; } }
+
+  @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; transform: translateY(-6px); } }
 }
 
 @layer components {

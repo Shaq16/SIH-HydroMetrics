@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { DashboardSidebar } from './DashboardSidebar';
 import { MapView } from './MapView';
 import { DetailsPanel } from './DetailsPanel';
 import { WaterBody } from '@/data/waterbodies';
+import EnterScreen from './EnterScreen';
 
 export function Dashboard() {
   const [selectedWaterBody, setSelectedWaterBody] = useState<WaterBody | null>(null);
@@ -13,6 +14,8 @@ export function Dashboard() {
   const [mapMode, setMapMode] = useState<'dark' | 'light' | 'satellite'>('dark');
   const [showTraffic, setShowTraffic] = useState<boolean>(false);
   const [contaminationFilter, setContaminationFilter] = useState<'all' | 'safe' | 'low' | 'medium' | 'high' | 'critical'>('all');
+  const [showEnter, setShowEnter] = useState<boolean>(true);
+  const [showDashboard, setShowDashboard] = useState<boolean>(false);
 
   const handleWaterBodySelect = (waterBody: WaterBody) => {
     setSelectedWaterBody(waterBody);
@@ -22,8 +25,19 @@ export function Dashboard() {
     setSelectedWaterBody(null);
   };
 
+  useEffect(() => {
+    // nothing here, loading completed handled by LoadingScreen
+  }, []);
+
+  const handleEnter = () => {
+    setShowEnter(false);
+    setTimeout(() => setShowDashboard(true), 150);
+  };
+
+  if (showEnter) return <EnterScreen onEnter={handleEnter} />;
+
   return (
-    <div className="h-screen bg-background text-foreground">
+    <div className={`h-screen bg-background text-foreground ${showDashboard ? 'opacity-100' : 'opacity-0'}`}>
       <SidebarProvider>
         <div className="flex h-screen w-full overflow-hidden">
           <DashboardSidebar

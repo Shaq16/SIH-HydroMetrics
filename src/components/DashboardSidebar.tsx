@@ -85,8 +85,8 @@ export function DashboardSidebar({
             <MapPin className="w-5 h-5 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-sidebar-foreground">HeavyWater</h1>
-            <p className="text-sm text-sidebar-foreground/60">Heavy Water Quality Dashboard</p>
+            <h1 className="text-xl font-bold text-sidebar-foreground">Hydrometrics India</h1>
+            <p className="text-sm text-sidebar-foreground/60">Monitoring Water Quality Across India</p>
           </div>
         </div>
         
